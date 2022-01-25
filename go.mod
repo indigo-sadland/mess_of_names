@@ -1,4 +1,4 @@
-module github.com/indigo-sadland/MessOfNames
+module github.com/indigo-sadland/mon
 
 go 1.16
 
