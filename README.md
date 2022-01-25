@@ -1,5 +1,4 @@
-# mess_of_names \
-👁
+# mess_of_names 
 
 
 My implementation of yet another subdomains seeker. It's easy to extend so feel free to add your sources :)
