@@ -3,16 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/indigo-sadland/MessOfNames/alien_vault"
-	"github.com/indigo-sadland/MessOfNames/dns_scan"
-	"github.com/indigo-sadland/MessOfNames/hacker_target"
-	"github.com/indigo-sadland/MessOfNames/security_trails"
-	"github.com/indigo-sadland/MessOfNames/site_dossier"
-	"github.com/indigo-sadland/MessOfNames/threat_crowd"
+	"github.com/indigo-sadland/mon/alien_vault"
+	"github.com/indigo-sadland/mon/dns_scan"
+	"github.com/indigo-sadland/mon/hacker_target"
+	"github.com/indigo-sadland/mon/security_trails"
+	"github.com/indigo-sadland/mon/site_dossier"
+	"github.com/indigo-sadland/mon/threat_crowd"
 	"os"
 )
 
-func RequestAll(domain, api string)  {
+func RequestAll(domain, api string) {
 
 	fmt.Printf("[*] COLLECTING SUBDOMAINS FOR <<%s>>. PLEASE STAND BY :)\n", domain)
 
@@ -46,7 +46,6 @@ func RequestAll(domain, api string)  {
 		fmt.Println(err)
 	}
 
-
 	AllSubdomains := operateSlices(AlienVaualt, DnsScan, HackerTarget, SecurityTrails, SiteDossier, ThreadCrowd)
 
 	counter := len(AllSubdomains)
@@ -55,10 +54,9 @@ func RequestAll(domain, api string)  {
 		fmt.Println(subdom)
 	}
 
-
 }
 
-func operateSlices(slices...[]string) []string {
+func operateSlices(slices ...[]string) []string {
 	var mergedSlice []string
 
 	for _, oneSlice := range slices {
@@ -70,7 +68,7 @@ func operateSlices(slices...[]string) []string {
 	return subdomainList
 }
 
-func removeDuplicateValues(stringSlice []string)  []string {
+func removeDuplicateValues(stringSlice []string) []string {
 
 	keys := make(map[string]bool)
 	subdomainList := []string{}
@@ -89,12 +87,11 @@ func removeDuplicateValues(stringSlice []string)  []string {
 
 }
 
-func main()  {
+func main() {
 
 	InputDomain := flag.String("domain", "", "Domain to work with.")
-	SecTrailsKey := flag.String("api","", "Security Trails API key (If you want to use this service in scan).")
+	SecTrailsKey := flag.String("api", "", "Security Trails API key (If you want to use this service in scan).")
 	flag.Parse()
-
 
 	if *InputDomain == "" {
 		flag.PrintDefaults()
