@@ -11,5 +11,5 @@ My implementation of yet another subdomains seeker. It's easy to extend so feel 
 - `ThreatCrowd`
 
 ### Usage:
-`go get github.com/indigo-sadland/MessOfNames`\
-`MessOfNames -domain example.com -api YOUR_SECURITY_TRAILS API KEY [OPTIONAL]`
+`go get github.com/indigo-sadland/mon`\
+`mon -domain example.com -api YOUR_SECURITY_TRAILS API KEY [OPTIONAL]`
